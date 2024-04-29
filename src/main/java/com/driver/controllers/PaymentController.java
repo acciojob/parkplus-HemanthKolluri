@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/payment")
 public class PaymentController {
-
-    @Autowired
+	
+	@Autowired
     PaymentServiceImpl paymentService;
 
     @PostMapping("/pay")
@@ -20,6 +20,5 @@ public class PaymentController {
         //If the mode contains a string other than "cash", "card", or "upi" (any character in uppercase or lowercase), throw "Payment mode not detected" exception.
         //Note that the reservationId always exists
         return paymentService.pay(reservationId,amountSent,mode);
-
     }
 }
